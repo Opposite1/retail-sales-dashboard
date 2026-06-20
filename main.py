@@ -1,0 +1,47 @@
+#------------------------------------------------------
+# Sales Report
+days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+]
+
+sales = []
+
+for day in days:
+    sale = float(input(f"Enter {day} Sales: $"))
+    sales.append(sale)
+
+#------------------------------------------------------
+
+daily_sales = float(input("Enter daily sales: $"))
+hours_worked = float(input("Enter hours worked: "))
+labor_cost = float(input("Enter labor cost: $"))
+
+sales_per_hour = daily_sales / hours_worked
+profit = daily_sales - labor_cost
+total_sales = sum(sales)
+average_sales = total_sales / len(sales)
+best_days = max(sales)
+worst_days = min(sales)
+
+print("\nRetail Performance Dashboard")
+print("----------------------------")
+
+print("\nDAILY PERFORMANCE")
+print("----------------------------")
+print("Daily Sales: $", daily_sales)
+print("Hours Worked:", hours_worked)
+print("Sales Per Hour: $", round(sales_per_hour, 2))
+print("Profit: $", profit)
+
+print("\nWEEKLY PERFORMANCE")
+print("----------------------------")
+print("Weekly Sales: $", total_sales)
+print("Average Daily Sales: $", round(average_sales, 2))
+print("Best Sales Day: $", best_days)
+print("Worst Sales Day: $", worst_days)
