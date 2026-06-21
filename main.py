@@ -45,3 +45,4 @@ print("Weekly Sales: $", total_sales)
 print("Average Daily Sales: $", round(average_sales, 2))
 print("Best Sales Day: $", best_days)
 print("Worst Sales Day: $", worst_days)
+
