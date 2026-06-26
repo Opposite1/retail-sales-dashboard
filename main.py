@@ -29,6 +29,12 @@ average_sales = total_sales / len(sales)
 best_days = max(sales)
 worst_days = min(sales)
 
+best_days_index = sales.index(best_days)
+worst_days_inex = sales. index(worst_days)
+
+best_days_name = days[best_days_index]
+worst_day_name = days[worst_days_inex]
+
 print("\nRetail Performance Dashboard")
 print("----------------------------")
 
@@ -43,6 +49,17 @@ print("\nWEEKLY PERFORMANCE")
 print("----------------------------")
 print("Weekly Sales: $", total_sales)
 print("Average Daily Sales: $", round(average_sales, 2))
-print("Best Sales Day: $", best_days)
-print("Worst Sales Day: $", worst_days)
+print("Best Sales Day:", best_days_name, "- $", best_days)
+print("Worst Sales Day: $", worst_day_name, "- $", worst_days)
 
+# Performance Rating
+if sales_per_hour >= 200:
+    rating = "Excellent"
+elif sales_per_hour >= 250:
+    rating = "Good"
+elif sales_per_hour >= 100:
+    rating = "Average"
+else:
+    rating = "Needs Improvement"
+
+print("Performance Rating:", rating)
