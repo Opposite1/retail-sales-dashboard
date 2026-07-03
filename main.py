@@ -50,12 +50,12 @@ print("----------------------------")
 print("Weekly Sales: $", total_sales)
 print("Average Daily Sales: $", round(average_sales, 2))
 print("Best Sales Day:", best_days_name, "- $", best_days)
-print("Worst Sales Day: $", worst_day_name, "- $", worst_days)
+print("Worst Sales Day:", worst_day_name, "- $", worst_days)
 
 # Performance Rating
-if sales_per_hour >= 200:
+if sales_per_hour >= 250:
     rating = "Excellent"
-elif sales_per_hour >= 250:
+elif sales_per_hour >= 200:
     rating = "Good"
 elif sales_per_hour >= 100:
     rating = "Average"
