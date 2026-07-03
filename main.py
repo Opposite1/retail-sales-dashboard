@@ -30,27 +30,27 @@ best_days = max(sales)
 worst_days = min(sales)
 
 best_days_index = sales.index(best_days)
-worst_days_inex = sales. index(worst_days)
+worst_days_index = sales.index(worst_days)
 
 best_days_name = days[best_days_index]
-worst_day_name = days[worst_days_inex]
+worst_day_name = days[worst_days_index]
 
 print("\nRetail Performance Dashboard")
 print("----------------------------")
 
 print("\nDAILY PERFORMANCE")
 print("----------------------------")
-print("Daily Sales: $", daily_sales)
+print(f"Daily Sales: ${daily_sales:.2f}")
 print("Hours Worked:", hours_worked)
-print("Sales Per Hour: $", round(sales_per_hour, 2))
-print("Profit: $", profit)
+print(f"Sales Per Hour: ${sales_per_hour:.2f}")
+print(f"Profit: ${profit:.2f}")
 
 print("\nWEEKLY PERFORMANCE")
 print("----------------------------")
-print("Weekly Sales: $", total_sales)
-print("Average Daily Sales: $", round(average_sales, 2))
-print("Best Sales Day:", best_days_name, "- $", best_days)
-print("Worst Sales Day:", worst_day_name, "- $", worst_days)
+print(f"Weekly Sales: ${total_sales:.2f}")
+print(f"Average Daily Sales: ${average_sales:.2f}")
+print(f"Best Sales Day: {best_days_name} - ${best_days:.2f}")
+print(f"Worst Sales Day: {worst_day_name} - ${worst_days:.2f}")
 
 # Performance Rating
 if sales_per_hour >= 250:
@@ -63,3 +63,30 @@ else:
     rating = "Needs Improvement"
 
 print("Performance Rating:", rating)
+
+# Weekly Sales Goal
+sales_goal = float(input("\nEnter weekly sales goal: $"))
+
+if total_sales >= sales_goal:
+    print("Congratulations! Weekly sales goal achieved!")
+    print(f"Amount above goal: ${total_sales - sales_goal:.2f}")
+else:
+    print("Weekly sales goal not achieved.")
+    print(f"Amount needed: ${sales_goal - total_sales:.2f}")
+
+# Daily Sales Target
+daily_goal = sales_goal / 7
+print(f"Average Daily Goal: ${daily_goal:.2f}")
+
+# Sales Trend Analysis
+print("\nDAILY SALES CHANGES")
+print("---------------------------")
+for i in range(1, len(sales)):
+    change = sales[i] - sales[i - 1]
+
+    if change > 0:
+        print(f"{days[i]}: Up ${change:.2f}")
+    elif change < 0:
+        print(f"{days[i]}: Down ${abs(change):.2f}")
+    else:
+        print(f"{days[i]}: No Change")
